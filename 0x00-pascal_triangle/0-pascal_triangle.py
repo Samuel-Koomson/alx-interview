@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-def pascal_triangle(n):
     """
     Generate Pascal's triangle up to the nth row.
 
@@ -14,24 +12,18 @@ def pascal_triangle(n):
     pascals_triangle(5)
     [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
     """
+def pascal_triangle(n):
     triangle = []
-
-    # checking if n is less than or equal to 0
+    # check if the triangle is less than 0
     if n <= 0:
         return triangle
-
     for i in range(n):
-        row = []
+        initial_list = []
 
-        for j in range(i + 1):
+        for j in range(i+1):
             if j == 0 or j == i:
-               row.append(1)
+                initial_list.append(1)
             else:
-                # Calculate the middle elements using the values from the previous row
-                prev_row = triangle[i - 1]
-                middle_element = prev_row[j - 1] + prev_row[j]
-                row.append(middle_element)
-
-        triangle.append(row)
-
+                initial_list.append(triangle[i-1][j-1] + triangle[i-1][j])
+        triangle.append(initial_list)
     return triangle
