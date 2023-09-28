@@ -35,11 +35,3 @@ def pascal_triangle(n):
         triangle.append(row)
 
     return triangle
-
-# Function test
-if __name__ == "__main__":
-    n = 5
-    result = generate_pascals_triangle(n)
-    for row in result:
-        print(row)
-
