@@ -11,6 +11,7 @@ list: A list of lists which represents Pascal's triangle.
 
 
 def pascal_triangle(n):
+    """Function for the making of pascal triangle"""
     triangle = []
     # check if the triangle is less than 0
     if n <= 0:
